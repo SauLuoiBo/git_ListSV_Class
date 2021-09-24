@@ -1,0 +1,16 @@
+* {
+    font-size: 1.6rem;
+    color: var(--color-main);
+    justify-content: center;
+    align-items: center;
+
+
+    
+}
+
+.container{
+    display: flex;
+    margin: 0 10%;
+    
+
+}
