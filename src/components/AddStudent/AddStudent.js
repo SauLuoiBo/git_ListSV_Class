@@ -5,7 +5,7 @@ class Addstudent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id:  '',
+			id:  new Date().toDateString(),
 			ten: "",
 			age: "",
 			email: "",
@@ -17,8 +17,9 @@ class Addstudent extends React.Component {
 
 
     // componentDidMount() {
-    //     const ddd = new Date.getTime().toString()
-    //     this.setState({id: ddd})
+    //     const event = new Date().toDateString();
+	// 	console.log(event)
+    //     this.setState({id: event})
     // }
 
   
@@ -50,7 +51,7 @@ class Addstudent extends React.Component {
 			localStorage.setItem("student", JSON.stringify(students));
 
             this.setState({
-                id: '',
+                id: new Date().toDateString(),
 				ten: "",
 				age: "",
 				email: "",

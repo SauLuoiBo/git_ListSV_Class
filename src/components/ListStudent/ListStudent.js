@@ -13,6 +13,14 @@ class ListStudent extends React.Component {
         console.log(this.state.students)
         console.log(this.state.students[0])
 	}
+	del = (id) => {
+		const newStudents = this.state.students.filter(sv => sv.id !== id)
+			console.log(id)
+			localStorage.setItem("student", JSON.stringify(newStudents));
+		
+			console.log(newStudents)
+			window.location.reload()
+	}
 
 	render() {
 		// localStorage.setItem("student", JSON.stringify(data));
@@ -20,6 +28,15 @@ class ListStudent extends React.Component {
 		// const renderStudentList = students.map((data) => {
 		//     return <StudentCard del={del} student={data} key={data.id} />;
 		//   });
+
+		// const del = (id) => {
+		// 	const newStudents = this.state.students.filter(sv => sv.id !== id)
+		// 	console.log(id)
+		// 	localStorage.setItem("student", JSON.stringify(newStudents));
+		
+		// 	console.log(newStudents)
+		// 	window.location.reload()
+		//   }
 
 		console.log(this.state.students);
 		const baser = {
@@ -39,9 +56,9 @@ class ListStudent extends React.Component {
 			<>
 				<div className="wrapper_List">
                     <div className='heading'>Danh sách sinh viên</div>
-					<StudentCard student={baser} />
+					<StudentCard student={baser}  />
                     {this.state.students.map((data, index) => 
-                        <StudentCard key={index} student={data} />
+                        <StudentCard key={index} student={data} delete={this.del} />
                     
                     )}
 				
